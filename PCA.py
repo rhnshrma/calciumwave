@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 
-df = pd.read_csv("/home/rohan/Documents/calciumwave/noPLCd_noSOC_ampl_speeds",delimiter=' ')
+df = pd.read_csv("/home/rohan/Documents/calciumwave/calciumwave/noPLCd_noSOC_ampl_speeds",delimiter=' ')
 
 def invert(x):
 	return(1/x)
@@ -51,7 +51,7 @@ features = ['Vratio','Buffer', 'ip3r', 'ip3_rest', 'Vratio/Buffer', 'ip3r/Buffer
        'Vratio*ip3_rest', 'Vratio*ip3_rest/Buffer', 'ip3r*ip3_rest',
        'ip3r*ip3_rest/Buffer', 'Buffer-1','kdeg-1', 'wave']
 
-keep = ['Vratio/Buffer', 'Vratio*ip3_rest/Buffer','ip3r','kdeg-1','ip3_rest','ip3r/Buffer','ip3r*ip3_rest/Buffer',
+keep = ['Vratio','Buffer', 'ip3r', 'ip3_rest', '#diam'
 'wave']
 
 x = df.loc[:,keep].values # Separating out the target
